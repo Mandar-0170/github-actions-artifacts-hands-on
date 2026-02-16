@@ -23,14 +23,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Download file
+    - name: Download text file
       uses: actions/download-artifact@v5
       with: 
         name: hello-artifact
         path: ./artifacts
-    - name: Sleep for 10 seconds
-      run: sleep 10
-    - name: Read File
+    - name: Display content of the text file
       run: cat ./artifacts/hello.txt
 
 
